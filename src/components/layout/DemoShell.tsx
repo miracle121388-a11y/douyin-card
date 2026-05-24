@@ -35,6 +35,9 @@ export function DemoShell() {
         </blockquote>
         <div className="demo-actions">
           <TwinButton onClick={startExperience}>开始体验</TwinButton>
+          <TwinButton variant="secondary" onClick={() => window.location.assign('/card')}>
+            打开纯卡片页
+          </TwinButton>
           <TwinButton variant="secondary" onClick={openExplain}>
             查看 Demo 说明
           </TwinButton>

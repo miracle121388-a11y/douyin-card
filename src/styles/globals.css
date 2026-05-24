@@ -1266,6 +1266,149 @@ button:disabled {
   font-weight: 760;
 }
 
+.card-only-page {
+  min-height: 100dvh;
+  padding: clamp(18px, 3vw, 34px);
+  background:
+    linear-gradient(90deg, rgba(184, 240, 109, 0.08), transparent 28%, transparent 78%, rgba(205, 183, 216, 0.18)),
+    linear-gradient(180deg, #fff 0%, #faf8f4 100%);
+}
+
+.card-only-toolbar {
+  max-width: 1160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 auto clamp(18px, 3vw, 32px);
+}
+
+.card-only-back-link {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 13px;
+  border: 1px solid var(--tt-line);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.82);
+  color: var(--tt-ink);
+  font-size: 13px;
+  font-weight: 850;
+  text-decoration: none;
+  box-shadow: var(--tt-soft-shadow);
+}
+
+.card-only-workspace {
+  max-width: 1160px;
+  min-height: calc(100dvh - 112px);
+  display: grid;
+  grid-template-columns: minmax(280px, 0.86fr) minmax(360px, 520px);
+  align-items: center;
+  gap: clamp(26px, 5vw, 72px);
+  margin: 0 auto;
+}
+
+.card-only-copy {
+  max-width: 520px;
+}
+
+.card-only-copy h1 {
+  margin: 17px 0 14px;
+  color: var(--tt-ink);
+  font-size: clamp(52px, 8vw, 92px);
+  line-height: 0.92;
+  font-weight: 950;
+}
+
+.card-only-copy > p {
+  margin: 0;
+  color: #5f574f;
+  font-size: 17px;
+  line-height: 1.78;
+  font-weight: 680;
+}
+
+.card-only-highlight-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.card-only-highlight {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 13px 0;
+  border-top: 1px solid rgba(23, 20, 19, 0.08);
+}
+
+.card-only-highlight:last-child {
+  border-bottom: 1px solid rgba(23, 20, 19, 0.08);
+}
+
+.card-only-highlight > span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 14px;
+  background: var(--tt-activity);
+  color: var(--tt-paper);
+}
+
+.card-only-highlight strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--tt-ink);
+  font-size: 15px;
+  font-weight: 930;
+}
+
+.card-only-highlight p {
+  margin: 0;
+  color: var(--tt-muted);
+  font-size: 13px;
+  line-height: 1.58;
+  font-weight: 680;
+}
+
+.card-only-stage {
+  position: relative;
+  width: min(100%, 520px);
+  height: min(760px, calc(100dvh - 118px));
+  min-height: 650px;
+  justify-self: end;
+  overflow: hidden;
+  border: 1px solid rgba(23, 20, 19, 0.08);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(205, 183, 216, 0.28), transparent 34%),
+    radial-gradient(circle at 88% 82%, rgba(184, 240, 109, 0.22), transparent 32%),
+    rgba(255, 253, 249, 0.82);
+  box-shadow: 0 24px 72px rgba(42, 31, 55, 0.14);
+}
+
+.card-only-stage .same-frequency-screen {
+  height: 100%;
+  align-items: stretch;
+  padding: clamp(14px, 2vw, 22px);
+}
+
+.card-only-stage .same-frequency-card {
+  height: 100%;
+  border-radius: 24px;
+}
+
+.card-only-stage .sheet-layer {
+  position: absolute;
+}
+
+.card-only-stage .sheet-panel {
+  max-height: 82%;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -1995,5 +2138,55 @@ button:disabled {
   .phone-stage {
     min-height: 620px;
     height: min(760px, calc(100dvh - 22px));
+  }
+
+  .card-only-page {
+    padding: 16px;
+  }
+
+  .card-only-workspace {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .card-only-copy {
+    max-width: none;
+  }
+
+  .card-only-copy h1 {
+    font-size: 48px;
+  }
+
+  .card-only-copy > p {
+    font-size: 14px;
+  }
+
+  .card-only-highlight-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 14px;
+  }
+
+  .card-only-stage {
+    width: 100%;
+    height: min(760px, calc(100dvh - 24px));
+    min-height: 640px;
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 560px) {
+  .card-only-toolbar {
+    margin-bottom: 16px;
+  }
+
+  .card-only-highlight-list {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+
+  .card-only-stage {
+    min-height: 620px;
+    border-radius: 24px;
   }
 }
